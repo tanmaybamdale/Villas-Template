@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Earthcon Villas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Config -->
+    <script src="config.js"></script>
+</head>
+<body class="bg-brand-cream text-brand-dark font-sans overflow-x-hidden">
+
+  
+
+    <!-- Floating Contact Icons -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-4">
+        <a href="https://wa.me/919767339333" target="_blank" class="floating-icon w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-3xl" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919767339333" class="floating-icon w-14 h-14 bg-brand-gold rounded-full flex items-center justify-center text-white text-2xl" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 text-white bg-brand-dark shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-serif font-bold tracking-wider text-brand-gold">EARTHCON</a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">About</a>
+                <a href="villas.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Villas</a>
+                <a href="amenities.html" class="text-brand-gold transition-colors text-sm tracking-widest uppercase">Amenities</a>
+                <a href="about.html#location" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Lonavala</a>
+                <a href="book.html" class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all duration-300 uppercase text-xs tracking-widest">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark mt-4 py-4">
+            <div class="container mx-auto px-6 flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">About</a>
+                <a href="villas.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Villas</a>
+                <a href="amenities.html" class="text-brand-gold transition-colors text-sm tracking-widest uppercase">Amenities</a>
+                <a href="about.html#location" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Lonavala</a>
+                <a href="book.html" class="text-brand-gold hover:text-white transition-colors text-sm tracking-widest uppercase">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="relative h-[60vh] w-full overflow-hidden ">
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm md:text-base mb-4 font-bold">Experience</p>
+            <h1 class="text-5xl md:text-6xl font-serif font-medium mb-4 leading-tight">World-Class Amenities</h1>
+            <div class="w-24 h-1 bg-brand-gold"></div>
+        </div>
+    </header>
+
+    <!-- Main Amenities Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-bold">Luxury Features</span>
+                <h2 class="text-4xl font-serif mt-2">Everything You Need</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">From private pools to gourmet kitchens, our villas are equipped with world-class amenities to ensure an unforgettable stay.</p>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Amenity 1 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-swimming-pool text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Private Pools</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Every villa features a temperature-controlled private pool with lounge chairs and pool-side service.</p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wifi text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">High-Speed Wi-Fi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Stay connected with fiber-optic internet throughout the property, perfect for streaming and remote work.</p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Gourmet Kitchen</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Fully equipped kitchens with modern appliances, or opt for our in-villa chef service for a personalized dining experience.</p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-car text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Secure Parking</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">On-site covered parking with 24/7 CCTV surveillance for your peace of mind.</p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-fire text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">BBQ & Bonfire</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Enjoy outdoor cooking with BBQ grills and evening bonfire setups under the stars.</p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-concierge-bell text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">24/7 Caretaker</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Dedicated caretakers available round the clock to assist with any requests or needs.</p>
+                </div>
+
+                <!-- Amenity 7 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tv text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Smart Entertainment</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Large screen smart TVs with premium streaming services in every bedroom and living area.</p>
+                </div>
+
+                <!-- Amenity 8 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hot-tub text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Jacuzzi & Spa</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Selected villas feature heated jacuzzis perfect for relaxing after a day of exploring.</p>
+                </div>
+
+                <!-- Amenity 9 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Gaming & Recreation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Indoor games, board games, and gaming consoles available in premium villas.</p>
+                </div>
+
+                <!-- Amenity 10 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tree text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Private Gardens</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Landscaped gardens with outdoor seating areas for morning coffee or evening relaxation.</p>
+                </div>
+
+                <!-- Amenity 11 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Safety & Security</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Complete CCTV coverage, secure access control, and emergency response systems.</p>
+                </div>
+
+                <!-- Amenity 12 -->
+                <div class="bg-brand-cream p-8 rounded hover:shadow-xl transition-shadow duration-300 reveal-up">
+                    <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-3xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Climate Control</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Air conditioning and heating in all rooms to ensure comfort year-round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Services Section -->
+    <section class="py-24 bg-brand-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-bold">Premium Services</span>
+                <h2 class="text-4xl font-serif mt-2">Additional Services Available</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 border border-white/10 hover:border-brand-gold/50 transition-colors duration-300 rounded group reveal-up">
+                    <i class="fas fa-user-tie text-4xl text-brand-gold mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="font-serif text-xl mb-2">Butler Service</h3>
+                    <p class="text-gray-400 text-sm">On-request</p>
+                </div>
+                <div class="p-6 border border-white/10 hover:border-brand-gold/50 transition-colors duration-300 rounded group reveal-up">
+                    <i class="fas fa-birthday-cake text-4xl text-brand-gold mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="font-serif text-xl mb-2">Event Planning</h3>
+                    <p class="text-gray-400 text-sm">Celebrations</p>
+                </div>
+                <div class="p-6 border border-white/10 hover:border-brand-gold/50 transition-colors duration-300 rounded group reveal-up">
+                    <i class="fas fa-spa text-4xl text-brand-gold mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="font-serif text-xl mb-2">Spa Treatments</h3>
+                    <p class="text-gray-400 text-sm">In-villa massage</p>
+                </div>
+                <div class="p-6 border border-white/10 hover:border-brand-gold/50 transition-colors duration-300 rounded group reveal-up">
+                    <i class="fas fa-shopping-basket text-4xl text-brand-gold mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="font-serif text-xl mb-2">Grocery Service</h3>
+                    <p class="text-gray-400 text-sm">Pre-stocking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-brand-cream text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-serif mb-6">Experience Luxury Living</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Ready to enjoy these premium amenities? Book your villa today and experience the Earthcon difference.</p>
+            <a href="book.html" class="inline-block px-10 py-4 bg-brand-gold text-white hover:bg-brand-dark transition-colors duration-300 uppercase tracking-widest font-bold text-sm">Book Your Stay</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="text-center md:text-left">
+                    <a href="index.html" class="text-3xl font-serif font-bold tracking-wider text-brand-gold block mb-4">EARTHCON</a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Luxury Private Pool Villas in Lonavala. Experience the perfect blend of modern luxury and nature's tranquility.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-brand-gold font-serif text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="villas.html" class="hover:text-white transition-colors">Our Villas</a></li>
+                        <li><a href="amenities.html" class="hover:text-white transition-colors">Amenities</a></li>
+                        <li><a href="book.html" class="hover:text-white transition-colors">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Location -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-brand-gold font-serif text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start justify-center md:justify-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-gold"></i>
+                            <span>Earthcon Villas, Tungarli,<br>Lonavala, Maharashtra 410401</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fas fa-phone-alt text-brand-gold"></i>
+                            <a href="tel:+919767339333" class="hover:text-white">+91 97673 39333</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fas fa-envelope text-brand-gold"></i>
+                            <a href="mailto:info@earthconvillas.com" class="hover:text-white">info@earthconvillas.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-gray-600 text-xs text-center flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Earthcon Villas. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for Luxury Living.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

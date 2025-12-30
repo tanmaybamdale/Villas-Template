@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Earthcon Villas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Config -->
+    <script src="config.js"></script>
+</head>
+<body class="bg-brand-cream text-brand-dark font-sans overflow-x-hidden">
+
+
+    <!-- Floating Contact Icons -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-4">
+        <a href="https://wa.me/919767339333" target="_blank" class="floating-icon w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white text-3xl" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919767339333" class="floating-icon w-14 h-14 bg-brand-gold rounded-full flex items-center justify-center text-white text-2xl" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 text-white bg-brand-dark shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-serif font-bold tracking-wider text-brand-gold">EARTHCON</a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">About</a>
+                <a href="villas.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Villas</a>
+                <a href="amenities.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Amenities</a>
+                <a href="about.html#location" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Lonavala</a>
+                <a href="book.html" class="px-6 py-2 border border-brand-gold text-brand-gold bg-brand-gold/10 transition-all duration-300 uppercase text-xs tracking-widest">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark mt-4 py-4">
+            <div class="container mx-auto px-6 flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">About</a>
+                <a href="villas.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Villas</a>
+                <a href="amenities.html" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Amenities</a>
+                <a href="about.html#location" class="hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">Lonavala</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="relative h-[50vh] w-full overflow-hidden">
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('images/villa1/v1.jpeg');"></div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm md:text-base mb-4 font-bold">Reserve</p>
+            <h1 class="text-5xl md:text-6xl font-serif font-medium mb-4 leading-tight">Book Your Stay</h1>
+            <div class="w-24 h-1 bg-brand-gold"></div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-24 bg-brand-cream">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-white shadow-2xl p-8 md:p-12 relative">
+                <div class="text-center mb-10">
+                    <span class="text-brand-gold uppercase tracking-widest text-xs font-bold">Get in Touch</span>
+                    <h2 class="text-3xl font-serif mt-2 mb-3">Request Availability</h2>
+                    <p class="text-gray-600 text-sm">Fill in your details and we'll get back to you within 24 hours with availability and pricing.</p>
+                </div>
+                
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Full Name *</label>
+                            <input type="text" id="contact-name" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Phone Number *</label>
+                            <input type="tel" id="contact-phone" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" placeholder="+91 98765 43210" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
+                            <input type="email" id="contact-email" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Number of Guests</label>
+                            <input type="number" id="contact-guests" min="1" max="20" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" placeholder="4">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Check-in Date *</label>
+                            <input type="date" id="contact-date" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Check-out Date</label>
+                            <input type="date" id="contact-checkout" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Villa of Interest *</label>
+                        <select id="contact-villa" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors" required>
+                            <option value="">-- Select a Villa --</option>
+                            <option>Earthcon Mist Valley (₹15k/night)</option>
+                            <option>Earthcon Sky Deck (₹22k/night)</option>
+                            <option>Earthcon Verdant Edge (₹28k/night)</option>
+                            <option>Earthcon Pebble Creek (₹12k/night)</option>
+                            <option>Any Available Villa</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Special Requests / Message</label>
+                        <textarea id="contact-message" rows="4" class="w-full bg-gray-50 border border-gray-200 p-3 focus:outline-none focus:border-brand-gold transition-colors resize-none" placeholder="Any special requirements or questions..."></textarea>
+                    </div>
+
+                    <button type="button" onclick="sendWhatsapp()" class="w-full bg-brand-dark text-white py-4 uppercase tracking-widest font-bold hover:bg-brand-gold transition-colors duration-300 flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> Send Request via WhatsApp
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500 mt-4">Or call us directly at <a href="tel:+919767339333" class="text-brand-gold hover:underline font-bold">+91 97673 39333</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-3xl font-serif text-center mb-12">Booking Information</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-calendar-check text-brand-gold"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-2">Check-in / Check-out</h4>
+                            <p class="text-sm text-gray-600">Check-in: 2:00 PM | Check-out: 11:00 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-credit-card text-brand-gold"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-2">Payment</h4>
+                            <p class="text-sm text-gray-600">30% advance to confirm booking. Balance on check-in.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-times-circle text-brand-gold"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-2">Cancellation</h4>
+                            <p class="text-sm text-gray-600">Free cancellation up to 7 days before check-in.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-paw text-brand-gold"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-2">Pet Policy</h4>
+                            <p class="text-sm text-gray-600">Pets allowed in select villas with prior notice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-6 bg-brand-cream rounded">
+                    <h4 class="font-serif text-lg mb-4">What's Included</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> 24/7 Caretaker Service</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Complimentary Wi-Fi</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Private Pool Access</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Free Parking</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Basic Kitchen Supplies</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> BBQ Setup (On Request)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-brand-cream">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-bold">Have Questions?</span>
+                <h2 class="text-3xl font-serif mt-2">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded shadow">
+                    <h4 class="font-serif text-lg mb-2">Is food included in the booking?</h4>
+                    <p class="text-sm text-gray-600">Food is not included, but all villas have fully equipped kitchens. We can also arrange for an in-villa chef or catering service on request.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h4 class="font-serif text-lg mb-2">How far is the villa from Mumbai/Pune?</h4>
+                    <p class="text-sm text-gray-600">Our villas are approximately 85 km from Mumbai (2 hours) and 65 km from Pune (1.5 hours) via the Mumbai-Pune Expressway.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h4 class="font-serif text-lg mb-2">Can we host parties or events?</h4>
+                    <p class="text-sm text-gray-600">Yes, small celebrations and gatherings are welcome. Please inform us in advance so we can make necessary arrangements.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h4 class="font-serif text-lg mb-2">Is the pool heated?</h4>
+                    <p class="text-sm text-gray-600">Select villas feature heated pools. Please check the villa details or contact us for specific information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="text-center md:text-left">
+                    <a href="index.html" class="text-3xl font-serif font-bold tracking-wider text-brand-gold block mb-4">EARTHCON</a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Luxury Private Pool Villas in Lonavala. Experience the perfect blend of modern luxury and nature's tranquility.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-brand-gold font-serif text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="villas.html" class="hover:text-white transition-colors">Our Villas</a></li>
+                        <li><a href="amenities.html" class="hover:text-white transition-colors">Amenities</a></li>
+                        <li><a href="book.html" class="hover:text-white transition-colors">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Location -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-brand-gold font-serif text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start justify-center md:justify-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-gold"></i>
+                            <span>Earthcon Villas, Tungarli,<br>Lonavala, Maharashtra 410401</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fas fa-phone-alt text-brand-gold"></i>
+                            <a href="tel:+919767339333" class="hover:text-white">+91 97673 39333</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fas fa-envelope text-brand-gold"></i>
+                            <a href="mailto:info@earthconvillas.com" class="hover:text-white">info@earthconvillas.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-gray-600 text-xs text-center flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Earthcon Villas. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for Luxury Living.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

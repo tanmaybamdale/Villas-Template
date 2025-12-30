@@ -1,0 +1,151 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37; 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b5952f; 
+}
+
+/* Hide scrollbar for horizontal scroll areas but keep functionality */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loader Styles */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+/* Hero Background Transition */
+#hero-bg {
+    transition: background-image 1s ease-in-out;
+}
+
+/* Villa Card Hover Effects */
+.villa-card:hover .villa-img {
+    transform: scale(1.1);
+}
+
+.villa-card {
+    overflow: hidden;
+}
+
+.villa-img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Floating Icons */
+.floating-icon {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.floating-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+#villa-modal {
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Animation keyframes */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out;
+}
+
+/* Line clamp utility for text truncation */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        max-height: 95vh;
+    }
+}
+
+/* Focus states for accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Button hover effects */
+button:hover,
+a.button:hover {
+    cursor: pointer;
+}
+
+/* Parallax effect for background images */
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .bg-fixed {
+        background-attachment: scroll;
+    }
+}
