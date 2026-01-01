@@ -19,17 +19,6 @@ A stunning, modern website template for luxury villa rentals, resorts, or real e
 
 [View Live Demo](https://tanmaybamdale.github.io/Villas-Template/) 
 
-## 📸 Screenshots
-
-### Homepage
-![Homepage](screenshots/home.png)
-
-### Villas Gallery
-![Villas](screenshots/villas.png)
-
-### Booking Page
-![Booking](screenshots/booking.png)
-
 ## 🛠️ Technologies Used
 
 - **HTML5** - Semantic markup
@@ -247,3 +236,4 @@ Give a ⭐️ if this project helped you!
 
 
 Made with ❤️ by [Your Name](https://github.com/yourusername)S
+
